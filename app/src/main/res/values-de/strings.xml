@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name" translatable="false">Transparent WallPaper</string>
+    <!-- Trong tệp res/values/strings.xml -->
+    <string name="navigation_drawer_open" translatable="false">Mở menu</string>
+    <string name="navigation_drawer_close" translatable="false">Đóng menu</string>
+
+
+    <string name="transparent_wallpaper">Durchscheinende Tapete</string>
+    <string name="this_action_may_contain_advertising">Diese Aktion kann Werbung enthalten</string>
+    <string name="language">Sprache</string>
+    <string name="transparency">Transparenz</string>
+    <string name="reveal_your_beautiful">Enthülle die Schönheit deines Bildschirms mit \n Durchscheinender Tapete.</string>
+    <string name="crystal">Kristall</string>
+    <string name="clarity_and_style">Klarheit und Stil treffen sich in Durchscheinender \n Tapete.</string>
+    <string name="clearVision">Klare Sicht</string>
+    <string name="Elevate_your">Steigere den Reiz deines Bildschirms mit \n Durchscheinender Tapete.</string>
+    <string name="next">Weiter</string>
+    <string name="explore">Erkunden</string>
+    <string name="typing_wallpaper">Schreibtapete</string>
+    <string name="mirror_wallpaper">Spiegeltapete</string>
+    <string name="hd_wallpapers">HD-Hintergründe</string>
+    <string name="do_you_like_this_app">Gefällt Ihnen diese App?</string>
+    <string name="let_us_now_rate">Lassen Sie uns Ihre Erfahrung wissen. 5 Sterne sind das Beste bei \nGoogle Play!</string>
+    <string name="cancle">Abbrechen</string>
+    <string name="submit">Einreichen</string>
+    <string name="select_option">OPTION AUSWÄHLEN</string>
+    <string name="lock_screen">Sperrbildschirm</string>
+    <string name="home_screen">Startbildschirm</string>
+    <string name="both">Beide</string>
+    <string name="ok">Ok</string>
+    <string name="done">Fertig</string>
+    <string name="successfully">Erfolgreich!</string>
+    <string name="version">Version: 1.2.1</string>
+    <string name="set_wallpapers">Tapeten setzen</string>
+    <string name="set_wallpaper">Hintergrundbild festlegen</string>
+    <string name="swipe_to_see_more">Wischen, um mehr zu sehen</string>
+    <string name="rate">Bewerten</string>
+    <string name="share">Teilen</string>
+    <string name="feedback">Feedback</string>
+    <string name="policy">Richtlinie</string>
+    <string name="thank_you">Danke</string>
+    <!-- TODO: Entfernen oder ändern Sie diesen Platzhaltertext -->
+    <string name="hello_blank_fragment">Hallo leerer Fragment</string>
+</resources>

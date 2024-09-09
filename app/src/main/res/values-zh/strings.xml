@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Transparent Wallpaper</string>
+    <!-- Trong tệp res/values/strings.xml -->
+    <string name="navigation_drawer_open" translatable="false">Mở menu</string>
+    <string name="navigation_drawer_close" translatable="false">Đóng menu</string>
+
+    <string name="transparent_wallpaper">透明壁纸</string>
+    <string name="this_action_may_contain_advertising">此操作可能包含广告</string>
+    <string name="language">语言</string>
+    <string name="transparency">透明度</string>
+    <string name="reveal_your_beautiful">透过透明壁纸展现屏幕之美。</string>
+    <string name="crystal">水晶</string>
+    <string name="clarity_and_style">水晶般清晰与风格相结合于透明壁纸。</string>
+    <string name="clearVision">清晰视野</string>
+    <string name="Elevate_your">持透明壁纸提升屏幕吸引力。</string>
+    <string name="next">下一个</string>
+    <string name="explore">探索</string>
+    <string name="typing_wallpaper">打字壁纸</string>
+    <string name="mirror_wallpaper">镜像壁纸</string>
+    <string name="hd_wallpapers">高清壁纸</string>
+    <string name="do_you_like_this_app">您喜欢这款应用吗？</string>
+    <string name="let_us_now_rate">请分享您的体验，5星是在Google Play上最好的！</string>
+    <string name="cancle">取消</string>
+    <string name="submit">提交</string>
+    <string name="select_option">选择选项</string>
+    <string name="lock_screen">锁屏</string>
+    <string name="home_screen">主屏</string>
+    <string name="both">两者</string>
+    <string name="ok">确定</string>
+    <string name="done">完成</string>
+    <string name="successfully">成功！</string>
+    <string name="version">版本：1.2.1</string>
+    <string name="set_wallpapers">设置壁纸</string>
+    <string name="set_wallpaper">设置壁纸</string>
+    <string name="swipe_to_see_more">滑动查看更多</string>
+    <string name="rate">评分</string>
+    <string name="share">分享</string>
+    <string name="feedback">反馈</string>
+    <string name="policy">政策</string>
+    <string name="thank_you">谢谢</string>
+    <string name="hello_blank_fragment">你好，空白碎片</string>
+</resources>

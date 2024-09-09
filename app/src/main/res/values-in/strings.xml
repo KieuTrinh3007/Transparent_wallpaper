@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Transparent Wallpaper</string>>
+    <string name="navigation_drawer_open" translatable="false">Mở menu</string>
+    <string name="navigation_drawer_close" translatable="false">Đóng menu</string>
+
+    <string name="transparent_wallpaper">Wallpaper Transparan</string>
+    <string name="this_action_may_contain_advertising">Tindakan ini mungkin mengandung iklan</string>
+    <string name="language">Bahasa</string>
+    <string name="transparency">Transparansi</string>
+    <string name="reveal_your_beautiful">Tampilkan keindahan layarmu dengan \n Wallpaper Transparan.</string>
+    <string name="crystal">Kristal</string>
+    <string name="clarity_and_style">Ketajaman dan gaya bertemu dalam Wallpaper \n Transparan.</string>
+    <string name="clearVision">Visi Jernih</string>
+    <string name="Elevate_your">Tingkatkan daya tarik layarmu dengan \n Wallpaper Transparan.</string>
+    <string name="next">Selanjutnya</string>
+    <string name="explore">Jelajahi</string>
+    <string name="typing_wallpaper">Wallpaper Mengetik</string>
+    <string name="mirror_wallpaper">Wallpaper Cermin</string>
+    <string name="hd_wallpapers">Wallpaper HD</string>
+    <string name="do_you_like_this_app">Apakah Anda menyukai aplikasi ini?</string>
+    <string name="let_us_now_rate">Berikan pengalaman Anda, 5 bintang adalah yang terbaik di \n Google Play!</string>
+    <string name="cancle">Batal</string>
+    <string name="submit">Kirim</string>
+    <string name="select_option">PILIHAN PILIHAN</string>
+    <string name="lock_screen">Layar Kunci</string>
+    <string name="home_screen">Layar Beranda</string>
+    <string name="both">Keduanya</string>
+    <string name="ok">Oke</string>
+    <string name="done">Selesai</string>
+    <string name="successfully">Berhasil!</string>
+    <string name="version">Versi: 1.2.1</string>
+    <string name="set_wallpapers">Atur Wallpaper</string>
+    <string name="set_wallpaper">Atur Wallpaper</string>
+    <string name="swipe_to_see_more">Geser untuk melihat lebih banyak</string>
+    <string name="rate">Penilaian</string>
+    <string name="share">Bagikan</string>
+    <string name="feedback">Masukan</string>
+    <string name="policy">Kebijakan</string>
+    <string name="thank_you">Terima kasih</string>
+    <string name="hello_blank_fragment">Halo fragmen kosong</string>
+</resources>

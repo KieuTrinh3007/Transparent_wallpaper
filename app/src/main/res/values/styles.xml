@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MenuTextAppearance">
+        <item name="android:textSize">16sp</item> <!-- Kích thước văn bản -->
+        <item name="android:fontFamily">@font/plusjakartasans</item>
+        <item name="android:textColor">#D0D5DD</item>"
+    </style>
+</resources>

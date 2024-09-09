@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name" translatable="false">Transparent Wallpaper</string>
+    <!-- Trong tệp res/values/strings.xml -->
+    <string name="navigation_drawer_open" translatable="false">Mở menu</string>
+    <string name="navigation_drawer_close" translatable="false">Đóng menu</string>
+
+    <string name="transparent_wallpaper">पारदर्शी वॉलपेपर</string>
+    <string name="this_action_may_contain_advertising">यह क्रिया विज्ञापन शामिल कर सकती है</string>
+    <string name="language">भाषा</string>
+    <string name="transparency">पारदर्शिता</string>
+    <string name="reveal_your_beautiful">पारदर्शी वॉलपेपर के साथ अपने स्क्रीन की सुंदरता प्रकट करें।</string>
+    <string name="crystal">क्रिस्टल</string>
+    <string name="clarity_and_style">पारदर्शी वॉलपेपर में स्पष्टता और शैली मिलती है।</string>
+    <string name="clearVision">स्पष्ट दृष्टि</string>
+    <string name="Elevate_your">पारदर्शी वॉलपेपर के साथ अपने स्क्रीन की कांति बढ़ाएं।</string>
+    <string name="next">अगला</string>
+    <string name="explore">अन्वेषण करें</string>
+    <string name="typing_wallpaper">टाइपिंग वॉलपेपर</string>
+    <string name="mirror_wallpaper">आईना वॉलपेपर</string>
+    <string name="hd_wallpapers">एचडी वॉलपेपर</string>
+    <string name="do_you_like_this_app">क्या आपको यह ऐप पसंद है?</string>
+    <string name="let_us_now_rate">हमें अपने अनुभव के बारे में बताएं, 5 स्टार Google Play पर सबसे अच्छा है!</string>
+    <string name="cancle">रद्द करें</string>
+    <string name="submit">प्रस्तुत</string>
+    <string name="select_option">विकल्प चुनें</string>
+    <string name="lock_screen">लॉक स्क्रीन</string>
+    <string name="home_screen">होम स्क्रीन</string>
+    <string name="both">दोनों</string>
+    <string name="ok">ठीक है</string>
+    <string name="done">संपन्न</string>
+    <string name="successfully">सफलतापूर्वक!</string>
+    <string name="version">संस्करण: 1.2.1</string>
+    <string name="set_wallpapers">वॉलपेपर सेट करें</string>
+    <string name="set_wallpaper">"वॉलपेपर सेट करें"</string>
+    <string name="swipe_to_see_more">अधिक देखने के लिए स्वाइप करें</string>
+    <string name="rate">रेटिंग</string>
+    <string name="share">साझा करें</string>
+    <string name="feedback">प्रतिक्रिया</string>
+    <string name="policy">नीति</string>
+    <string name="thank_you">धन्यवाद</string>
+    <!-- TODO: इस प्लेसहोल्डर पाठ को हटाएं या बदलें -->
+    <string name="hello_blank_fragment">नमस्कार खाली फ़्रेगमेंट</string>
+</resources>

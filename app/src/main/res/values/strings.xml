@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name" translatable="false">Transparent Wallpaper</string>
+    <!-- Trong tệp res/values/strings.xml -->
+    <string name="navigation_drawer_open" translatable="false">Mở menu</string>
+    <string name="navigation_drawer_close" translatable="false">Đóng menu</string>
+
+
+    //
+    <string name="transparent_wallpaper">Transparent Wallpaper</string>
+    <string name="this_action_may_contain_advertising">This action may contain advertising</string>
+    <string name="language">Language</string>
+    <string name="transparency">Transparency</string>
+    <string name="reveal_your_beautiful">Reveal your screen\'s beauty with \n Transparent Wallpaper.</string>
+    <string name="crystal">Crystal</string>
+    <string name="clarity_and_style">Clarity and style meet in Transparent \n Wallpaper.</string>
+    <string name="clearVision">ClearVision</string>
+    <string name="Elevate_your">Elevate your screen\'s allure with \n Transparent Wallpaper.</string>
+    <string name="next">Next</string>
+    <string name="explore">Explore</string>
+    <string name="typing_wallpaper">Typing Wallpaper</string>
+    <string name="mirror_wallpaper">Mirror Wallpaper</string>
+    <string name="hd_wallpapers">HD Wallpapers</string>
+    <string name="do_you_like_this_app">Do you like this app ?</string>
+    <string name="let_us_now_rate">Let us know your experience 5 stars is the best on Google Play!</string>
+    <string name="cancle">Cancle</string>
+    <string name="submit">Submit</string>
+    <string name="select_option">SELECT OPTION</string>
+    <string name="lock_screen">Lock Screen</string>
+    <string name="home_screen">Home Screen</string>
+    <string name="both">Both</string>
+    <string name="ok">Ok</string>
+    <string name="done">Done</string>
+    <string name="successfully">Successfully!</string>
+    <string name="version">Version: 1.2.1</string>
+    <string name="set_wallpapers">Set Wallpapers</string>
+    <string name="set_wallpaper">Set Wallpaper</string>
+    <string name="swipe_to_see_more">Swipe to see more</string>
+    <string name="rate">Rate</string>
+    <string name="share">Share</string>
+    <string name="feedback">Feedback</string>
+    <string name="policy">Policy</string>
+    <string name="thank_you">Thank you</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Transparent Wallpaper</string>
+    <!-- Trong tệp res/values/strings.xml -->
+    <string name="navigation_drawer_open" translatable="false">Mở menu</string>
+    <string name="navigation_drawer_close" translatable="false">Đóng menu</string>
+
+    <string name="transparent_wallpaper">Fond d\'écran transparent</string>
+    <string name="this_action_may_contain_advertising">Cette action peut contenir de la publicité</string>
+    <string name="language">Langue</string>
+    <string name="transparency">Transparence</string>
+    <string name="reveal_your_beautiful">Révélez la beauté de votre écran avec \n un fond d\'écran transparent.</string>
+    <string name="crystal">Cristal</string>
+    <string name="clarity_and_style">Clarté et style se rencontrent dans un fond d\'écran transparent.</string>
+    <string name="clearVision">Vision claire</string>
+    <string name="Elevate_your">Rehaussez l\'allure de votre écran avec \n un fond d\'écran transparent.</string>
+    <string name="next">Suivant</string>
+    <string name="explore">Explorer</string>
+    <string name="typing_wallpaper">Fond d\'écran de saisie</string>
+    <string name="mirror_wallpaper">Fond d\'écran miroir</string>
+    <string name="hd_wallpapers">Fonds d\'écran HD</string>
+    <string name="do_you_like_this_app">Aimez-vous cette application ?</string>
+    <string name="let_us_now_rate">Faites-nous part de votre expérience, 5 étoiles est le meilleur sur \nGoogle Play !</string>
+    <string name="cancle">Annuler</string>
+    <string name="submit">Soumettre</string>
+    <string name="select_option">SÉLECTIONNER UNE OPTION</string>
+    <string name="lock_screen">Écran de verrouillage</string>
+    <string name="home_screen">Écran d\'accueil</string>
+    <string name="both">Les deux</string>
+    <string name="ok">Ok</string>
+    <string name="done">Terminé</string>
+    <string name="successfully">Avec succès !</string>
+    <string name="version">Version : 1.2.1</string>
+    <string name="set_wallpapers">Définir les fonds d\'écran</string>
+    <string name="set_wallpaper">Définir le papier peint</string>
+    <string name="swipe_to_see_more">Faites glisser pour voir plus</string>
+    <string name="rate">Évaluer</string>
+    <string name="share">Partager</string>
+    <string name="feedback">Retour d\'information</string>
+    <string name="policy">Politique</string>
+    <string name="thank_you">Merci</string>
+    <string name="hello_blank_fragment">Bonjour fragment vide</string>
+</resources>

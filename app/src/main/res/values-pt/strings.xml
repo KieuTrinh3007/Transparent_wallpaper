@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Transparent Wallpaper</string>
+    <!-- Trong tệp res/values/strings.xml -->
+    <string name="navigation_drawer_open" translatable="false">Mở menu</string>
+    <string name="navigation_drawer_close" translatable="false">Đóng menu</string>
+
+    <string name="transparent_wallpaper">Papel de parede transparente</string>
+    <string name="this_action_may_contain_advertising">Esta ação pode conter publicidade</string>
+    <string name="language">Idioma</string>
+    <string name="transparency">Transparência</string>
+    <string name="reveal_your_beautiful">Revele a beleza da sua tela com \n um papel de parede transparente.</string>
+    <string name="crystal">Cristal</string>
+    <string name="clarity_and_style">Clareza e estilo se encontram em um papel de parede transparente.</string>
+    <string name="clearVision">Visão clara</string>
+    <string name="Elevate_your">Eleve o visual da sua tela com \n um papel de parede transparente.</string>
+    <string name="next">Próximo</string>
+    <string name="explore">Explorar</string>
+    <string name="typing_wallpaper">Papel de parede de digitação</string>
+    <string name="mirror_wallpaper">Papel de parede espelho</string>
+    <string name="hd_wallpapers">Papéis de parede em HD</string>
+    <string name="do_you_like_this_app">Você gosta deste aplicativo?</string>
+    <string name="let_us_now_rate">Compartilhe sua experiência, 5 estrelas são o melhor no \n Google Play!</string>
+    <string name="cancle">Cancelar</string>
+    <string name="submit">Enviar</string>
+    <string name="select_option">SELECIONAR OPÇÃO</string>
+    <string name="lock_screen">Tela de bloqueio</string>
+    <string name="home_screen">Tela inicial</string>
+    <string name="both">Ambos</string>
+    <string name="ok">Ok</string>
+    <string name="done">Concluído</string>
+    <string name="successfully">Com sucesso!</string>
+    <string name="version">Versão: 1.2.1</string>
+    <string name="set_wallpapers">Definir Papéis de Parede</string>
+    <string name="set_wallpaper">Definir Papel de Parede</string>
+    <string name="swipe_to_see_more">Deslize para ver mais</string>
+    <string name="rate">Avaliar</string>
+    <string name="share">Compartilhar</string>
+    <string name="feedback">Feedback</string>
+    <string name="policy">Política</string>
+    <string name="thank_you">Obrigado</string>
+    <string name="hello_blank_fragment">Olá fragmento em branco</string>
+</resources>
