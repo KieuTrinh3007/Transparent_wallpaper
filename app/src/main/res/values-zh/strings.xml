@@ -40,4 +40,5 @@
     <string name="policy">政策</string>
     <string name="thank_you">谢谢</string>
     <string name="hello_blank_fragment">你好，空白碎片</string>
+    <string name="thank_rate">感谢您花时间给我们评分</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.wallpaper
 
+import android.annotation.SuppressLint
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.graphics.Color
@@ -8,11 +9,21 @@ import android.graphics.Shader
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.GravityCompat
+import com.amazic.ads.callback.InterCallback
+import com.amazic.ads.util.AppOpenManager
+import com.amazic.ads.util.manager.native_ad.NativeBuilder
+import com.amazic.ads.util.manager.native_ad.NativeManager
 import com.example.bmi.Base.BaseActivity
 import com.example.bmi.Base.BaseViewModel
 import com.example.bmi.Utils.SharePrefUtils
@@ -20,12 +31,15 @@ import com.example.wallpaper.HD_Wallpapers.HDWallpapers
 import com.example.wallpaper.Language.SettingLanguage
 import com.example.wallpaper.Setting.Rate.Rate
 import com.example.wallpaper.Setting.Rate.RatingDialog
+import com.example.wallpaper.ads.InterManage
 import com.example.wallpaper.databinding.ActivityHomeBinding
+import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.tasks.Task
 import com.google.android.material.navigation.NavigationView
 import com.google.android.play.core.review.ReviewInfo
 import com.google.android.play.core.review.ReviewManager
 import com.google.android.play.core.review.ReviewManagerFactory
+
 
 
 class Home : BaseActivity<ActivityHomeBinding, BaseViewModel>() {
@@ -34,6 +48,8 @@ class Home : BaseActivity<ActivityHomeBinding, BaseViewModel>() {
     private var ratingDialog: RatingDialog? = null
     private var check = false
 
+    private var nativeManager: NativeManager? = null
+    private var isSharing = false
 
     override fun createBinding(): ActivityHomeBinding {
         return ActivityHomeBinding.inflate(layoutInflater)
@@ -49,7 +65,27 @@ class Home : BaseActivity<ActivityHomeBinding, BaseViewModel>() {
 
     override fun initView() {
         super.initView()
-//        window.statusBarColor = Color.parseColor("#101828") // Màu sẽ trùng với màu background của bạn
+
+        InterManage.loadInterAll(this@Home)
+
+        try {
+
+            val list: MutableList<String> = ArrayList()
+            list.add(getString(R.string.native_language))
+            val builder = NativeBuilder(
+                this, binding.nativeframeHomeAds,
+                R.layout.ads_native_shimmer_home, R.layout.ads_native_layout_home
+            )
+            builder.setListIdAd(list)
+            nativeManager = NativeManager(this, this, builder)
+
+
+        } catch (e: Exception) {
+            e.printStackTrace()
+            binding.nativeframeHomeAds.removeAllViews()
+            binding.nativeframeHomeAds.setVisibility(View.INVISIBLE)
+        }
+
         window.navigationBarColor = Color.TRANSPARENT
         navigationView = binding.nav
 
@@ -72,7 +108,21 @@ class Home : BaseActivity<ActivityHomeBinding, BaseViewModel>() {
         binding.tvTransparentWallpaper.paint.shader = shader
 
         binding.llHDWP.setOnClickListener {
-            startActivity(Intent(this, HDWallpapers::class.java))
+
+            InterManage.showInterAll(this@Home, object : InterCallback() {
+                override fun onNextAction() {
+                    super.onNextAction()
+                    Log.d("TAG", "onNextAction")
+                    startActivity()
+                }
+
+                override fun onAdFailedToLoad(i: LoadAdError?) {
+                    super.onAdFailedToLoad(i)
+                    Log.d("TAG", "onAdFailedToLoad")
+                }
+            })
+
+
         }
 
 
@@ -105,19 +155,21 @@ class Home : BaseActivity<ActivityHomeBinding, BaseViewModel>() {
                     if (!check) {
                         check = true
                         share()
+                        AppOpenManager.getInstance().disableAppResumeWithActivity(Home::class.java)
                     }
 
 
                 }
 
                 R.id.nav_feedback -> {
-                    // Xử lý khi chọn mục feedback
+
                 }
 
                 R.id.nav_policy -> {
                     if (!check) {
                         check = true
                         openPrivacyPolicy()
+                        AppOpenManager.getInstance().disableAppResumeWithActivity(Home::class.java)
                     }
                 }
             }
@@ -131,6 +183,24 @@ class Home : BaseActivity<ActivityHomeBinding, BaseViewModel>() {
         } else {
             binding.nav.menu.findItem(R.id.nav_rate).isVisible = true
         }
+
+
+        val launchCount = SharePrefUtils.getAppLaunchCount(this)
+
+
+        if (launchCount % 3 == 0 || launchCount % 5 == 0 || launchCount % 7 == 0) {
+            SharePrefUtils.setHasShownRateDialog(this, false)
+        }
+
+        if (!SharePrefUtils.isRated(this)
+            && (launchCount % 3 == 0 || launchCount % 5 == 0 || launchCount % 7 == 0)
+            && !SharePrefUtils.hasShownRateDialog(this)) {
+
+            showRateDialog()
+            SharePrefUtils.setHasShownRateDialog(this, true)
+        }
+
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -148,6 +218,8 @@ class Home : BaseActivity<ActivityHomeBinding, BaseViewModel>() {
     }
 
     private fun share() {
+
+
         val intentShare = Intent(Intent.ACTION_SEND)
         intentShare.setType("text/plain")
         intentShare.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name))
@@ -164,43 +236,41 @@ class Home : BaseActivity<ActivityHomeBinding, BaseViewModel>() {
         check = true
 
         val ratingDialog = RatingDialog(this@Home)
-        ratingDialog.setCanceledOnTouchOutside(false)
-        ratingDialog!!.init(this@Home, object : RatingDialog.OnPress {
+        ratingDialog?.setCanceledOnTouchOutside(false)
+        ratingDialog?.init(this@Home, object : RatingDialog.OnPress {
             override fun send(s: Int) {
 
-                binding.nav.menu.findItem(R.id.nav_rate).isVisible = false
-                SharePrefUtils.forceRated(this@Home)
-                ratingDialog!!.dismiss()
-                check = false
+                handleRating(s)
+
+                ratingDialog?.dismiss()
+
 
             }
 
             override fun rating(s: Int) {
-                onRateAppNew()
-                binding.nav.menu.findItem(R.id.nav_rate).isVisible = false
-                SharePrefUtils.forceRated(this@Home)
-                ratingDialog!!.dismiss()
-                check = false
+                handleRating(s)
+
+                ratingDialog?.dismiss()
             }
 
             override fun cancel() {
-                ratingDialog!!.dismiss()
+                ratingDialog?.dismiss()
                 check = false
             }
 
             override fun later() {
-                ratingDialog!!.dismiss()
+                ratingDialog?.dismiss()
                 check = false
             }
 
             override fun gotIt() {
-                ratingDialog!!.dismiss()
+                ratingDialog?.dismiss()
                 check = false
             }
         })
 
-        ratingDialog!!.show()
-        ratingDialog!!.setOnDismissListener {
+        ratingDialog?.show()
+        ratingDialog?.setOnDismissListener {
             check = false
         }
 
@@ -245,13 +315,9 @@ class Home : BaseActivity<ActivityHomeBinding, BaseViewModel>() {
         }
     }
 
-    private fun hideRateMenuItem() {
-        val rateMenuItem = navigationView!!.menu.findItem(R.id.nav_rate)
-        rateMenuItem?.setVisible(true)
-    }
-
     override fun onResume() {
         super.onResume()
+
         check = false
     }
 
@@ -259,6 +325,71 @@ class Home : BaseActivity<ActivityHomeBinding, BaseViewModel>() {
         super.onBackPressed()
        finishAffinity()
     }
+
+    private fun startActivity() {
+        val intent = Intent(this@Home, HDWallpapers::class.java)
+        startActivity(intent)
+        finish()
+
+    }
+
+    private fun handleRating(rating: Int) {
+        if (rating in 1..3) {
+            ratingDialog?.dismiss()
+            showFeedbackDialog()
+        } else if (rating in 4..5) {
+            ratingDialog?.dismiss()
+            onRateAppNew()
+        }
+        binding.nav.menu.findItem(R.id.nav_rate).isVisible = false
+        SharePrefUtils.forceRated(this@Home)
+
+    }
+
+    @SuppressLint("InflateParams")
+    private fun showFeedbackDialog() {
+
+        if (ratingDialog?.isShowing == true) {
+
+            ratingDialog?.setOnDismissListener {
+                displayFeedbackDialog()
+            }
+        } else {
+
+            displayFeedbackDialog()
+        }
+    }
+
+    @SuppressLint("MissingInflatedId")
+    private fun displayFeedbackDialog() {
+        val builder = AlertDialog.Builder(this)
+        val inflater = layoutInflater
+
+
+        val dialogLayout = inflater.inflate(R.layout.dialog_feedback, null)
+        builder.setView(dialogLayout)
+        val alertDialog = builder.create()
+        alertDialog.setCanceledOnTouchOutside(false)
+
+        alertDialog.window?.setBackgroundDrawableResource(R.drawable.round_dialog_br)
+
+
+
+        val submitButton = dialogLayout.findViewById<TextView>(R.id.btn_ok)
+        val feedbackInput = dialogLayout.findViewById<TextView>(R.id.tvTitle)
+        val cancelButton = dialogLayout.findViewById<ImageView>(R.id.img_close)
+
+        submitButton.setOnClickListener {
+            alertDialog.dismiss()
+        }
+
+        cancelButton.setOnClickListener() {
+            alertDialog.dismiss()
+        }
+
+        alertDialog.show()
+    }
+
 
 }
 

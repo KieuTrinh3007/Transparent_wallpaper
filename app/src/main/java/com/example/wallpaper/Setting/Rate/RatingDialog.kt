@@ -46,6 +46,7 @@ class RatingDialog @SuppressLint("NonConstantResourceId") constructor(context2: 
         val attributes = window!!.attributes
         attributes.width = (displayMetrics.widthPixels * 0.95f).toInt()
         attributes.height = WindowManager.LayoutParams.WRAP_CONTENT
+
         window!!.attributes = attributes
         window!!.setSoftInputMode(16)
         tvTitle = findViewById<TextView>(R.id.tv_title)
@@ -130,7 +131,7 @@ class RatingDialog @SuppressLint("NonConstantResourceId") constructor(context2: 
     fun onclick() {
         btnRate.setOnClickListener { view: View? ->
 //            Log.d("TAG23", "onclick: ${rtb.rating}")
-            if (rate <= 4.0) {
+            if (rate < 4.0) {
                 onPress!!.send(rate)
             } else {
                 onPress!!.rating(rate)

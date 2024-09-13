@@ -2,55 +2,74 @@ package com.example.wallpaper
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
+import com.amazic.ads.callback.InterCallback
+import com.amazic.ads.util.manager.native_ad.NativeBuilder
+import com.amazic.ads.util.manager.native_ad.NativeManager
 import com.example.bmi.Base.BaseActivity
 import com.example.bmi.Base.BaseViewModel
+import com.example.wallpaper.ads.InterManage
 import com.example.wallpaper.databinding.ActivityDoneScreenBinding
+import com.google.android.gms.ads.LoadAdError
 
 class DoneScreen : BaseActivity<ActivityDoneScreenBinding, BaseViewModel>() {
 
+    private var nativeManager: NativeManager? = null
+
     override fun createBinding() = ActivityDoneScreenBinding.inflate(layoutInflater)
     override fun setViewModel() = BaseViewModel()
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        enableEdgeToEdge()
-//        setContentView(binding.root)
-//
-//        // Ẩn ActionBar
-//        supportActionBar?.hide()
-//
-//        // Tắt cả Status Bar và Navigation Bar
-//        window.decorView.systemUiVisibility = (
-//                View.SYSTEM_UI_FLAG_IMMERSIVE
-//                        or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-//                        or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-//                        or View.SYSTEM_UI_FLAG_FULLSCREEN
-//                        or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-//                        or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-//                )
-//
-//        // Đảm bảo ẩn cả ActionBar khi ẩn Status Bar và Navigation Bar
-//        window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
-//
-//
-//
-//
-//
-//    }
+
 
     override fun initView() {
         super.initView()
+        InterManage.loadInterAll(this@DoneScreen)
+        try {
+
+            val list: MutableList<String> = ArrayList()
+            list.add(getString(R.string.native_language))
+            val builder = NativeBuilder(
+                this, binding.nativeAds,
+                R.layout.ads_native_shimmer_done, R.layout.ads_native_layout_done
+            )
+            builder.setListIdAd(list)
+            nativeManager = NativeManager(this, this, builder)
+
+
+        } catch (e: Exception) {
+            e.printStackTrace()
+            binding.nativeAds.removeAllViews()
+            binding.nativeAds.setVisibility(View.INVISIBLE)
+        }
 
         binding.btnDone.setOnClickListener(){
-            startActivity(Intent(this, Home::class.java))
-            finish()
+
+            InterManage.showInterAll(this@DoneScreen, object : InterCallback() {
+                override fun onNextAction() {
+                    super.onNextAction()
+                    Log.d("TAG", "onNextAction")
+                    startActivity()
+                }
+
+                override fun onAdFailedToLoad(i: LoadAdError?) {
+                    super.onAdFailedToLoad(i)
+                    Log.d("TAG", "onAdFailedToLoad")
+                }
+            })
+
+
         }
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
             }
         })
     }
+    private fun startActivity() {
+        startActivity(Intent(this, Home::class.java))
+        finish()
+    }
+
 }

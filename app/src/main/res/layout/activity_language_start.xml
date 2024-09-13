@@ -17,11 +17,13 @@
 
 
     <LinearLayout
+        android:id="@+id/ll1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/img_br_sao3"
-
+        app:layout_constraintBottom_toTopOf="@+id/native_ads"
 
         >
 
@@ -69,12 +71,23 @@
             tools:listitem="@layout/item_language"
             android:layout_height="wrap_content">
 
-
-
         </androidx.recyclerview.widget.RecyclerView>
 
 
     </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/native_ads"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll1"
+            android:layout_marginTop="12dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <include layout="@layout/ads_native_shimer_large" />
+        </FrameLayout>
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

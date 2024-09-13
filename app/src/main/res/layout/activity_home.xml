@@ -56,6 +56,10 @@
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -143,12 +147,12 @@
                 <FrameLayout
                     android:id="@+id/nativeframeHome_ads"
                     android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_marginHorizontal="16sp"
-
+                    android:layout_height="208dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/custom_br_native"
                     app:layout_constraintTop_toBottomOf="@+id/cardTransparentWallpaper">
-
-                    />
+                    <include layout="@layout/ads_native_shimer" />
                 </FrameLayout>
 
 
@@ -280,6 +284,8 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
 
             <FrameLayout
                 android:id="@+id/frameLayoutMainn"

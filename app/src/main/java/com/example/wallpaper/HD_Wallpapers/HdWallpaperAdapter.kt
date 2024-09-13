@@ -49,4 +49,6 @@ class HdWallpaperAdapter( private val list: MutableList<HdWallpaperModel>?, priv
         RecyclerView.ViewHolder(binding.getRoot()) {
         var binding: ItemRcvHdwallpapersBinding = binding
     }
+
+
 }

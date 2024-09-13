@@ -40,6 +40,7 @@
     <string name="feedback">प्रतिक्रिया</string>
     <string name="policy">नीति</string>
     <string name="thank_you">धन्यवाद</string>
+    <string name="thank_rate">हमें रेटिंग देने के लिए समय निकालने के लिए धन्यवाद।</string>
     <!-- TODO: इस प्लेसहोल्डर पाठ को हटाएं या बदलें -->
     <string name="hello_blank_fragment">नमस्कार खाली फ़्रेगमेंट</string>
 </resources>

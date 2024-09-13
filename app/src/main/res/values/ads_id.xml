@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_splash" translatable="false">ca-app-pub-3940256099942544/9257395921</string>
+    <string name="inter_splash" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="native_language" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="native_intro" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="inter_intro" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="native_permission" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="appopen_resume" translatable="false">ca-app-pub-3940256099942544/9257395921</string>
+    <string name="banner_all" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner_typing" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="collapse_banner" translatable="false">ca-app-pub-3940256099942544/2014213617</string>
+    <string name="inter_all" translatable="false">ca-app-pub-3940256099942544/1033173712</string>"
+    <string name="native_view" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="native_main" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="native_success" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+
+
+</resources>

@@ -40,4 +40,5 @@
     <string name="policy">Política</string>
     <string name="thank_you">Obrigado</string>
     <string name="hello_blank_fragment">Olá fragmento em branco</string>
+    <string name="thank_rate">Obrigado por dedicar seu tempo para nos avaliar.</string>
 </resources>

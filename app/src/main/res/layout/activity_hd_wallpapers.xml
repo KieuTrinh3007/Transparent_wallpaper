@@ -60,6 +60,9 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+
+        <!-- Banner Layout -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcv_hdWallpaper"
             android:layout_width="0dp"
@@ -67,10 +70,33 @@
             android:layout_marginTop="12dp"
             android:layout_marginHorizontal="8dp"
             app:layout_constraintTop_toBottomOf="@id/clHeader"
+            app:layout_constraintBottom_toTopOf="@id/rlBanner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="DuplicateIds" />
+
+        <!-- Banner Layout -->
+        <LinearLayout
+            android:id="@+id/rlBanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#808080" />
+            <include
+                android:id="@+id/banner"
+                layout="@layout/layout_banner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </LinearLayout>

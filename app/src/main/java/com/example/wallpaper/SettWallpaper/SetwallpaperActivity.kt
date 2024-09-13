@@ -20,12 +20,15 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
+import com.amazic.ads.util.manager.native_ad.NativeBuilder
+import com.amazic.ads.util.manager.native_ad.NativeManager
 import com.example.bmi.Base.BaseActivity
 import com.example.wallpaper.Model.HdWallpaperModel
 import com.example.wallpaper.R
 import com.example.wallpaper.databinding.ActivitySetwallpaperBinding
 import com.example.wallpaper.databinding.DialogChooseScreenBinding
 import com.example.wallpaper.DoneScreen
+import com.example.wallpaper.ads.InterManage
 import java.io.IOException
 import kotlin.math.abs
 
@@ -34,6 +37,7 @@ class SetwallpaperActivity : BaseActivity<ActivitySetwallpaperBinding, Setwallpa
     private var setWPAdapter: SetwallpaperAdapter? = null
     private val list: MutableList<HdWallpaperModel> = mutableListOf()
     private var index = 0
+    private var nativeManager: NativeManager? = null
 
     override fun createBinding(): ActivitySetwallpaperBinding {
         return ActivitySetwallpaperBinding.inflate(layoutInflater)
@@ -46,9 +50,29 @@ class SetwallpaperActivity : BaseActivity<ActivitySetwallpaperBinding, Setwallpa
 
     override fun initView() {
         super.initView()
+
+        InterManage.loadInterAll(this@SetwallpaperActivity)
+        try {
+
+            val list: MutableList<String> = ArrayList()
+            list.add(getString(R.string.native_language))
+            val builder = NativeBuilder(
+                this, binding.nativeframeSetWallAds,
+                R.layout.ads_native_shimmer_setwp, R.layout.ads_native_layout_setwp
+            )
+            builder.setListIdAd(list)
+            nativeManager = NativeManager(this, this, builder)
+
+
+        } catch (e: Exception) {
+            e.printStackTrace()
+            binding.nativeframeSetWallAds.removeAllViews()
+            binding.nativeframeSetWallAds.setVisibility(View.INVISIBLE)
+        }
         supportActionBar?.hide()
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+
         list.add(HdWallpaperModel(1, R.drawable.hd1))
         list.add(HdWallpaperModel(2, R.drawable.hd8))
         list.add(HdWallpaperModel(3, R.drawable.hd3))
@@ -150,7 +174,6 @@ class SetwallpaperActivity : BaseActivity<ActivitySetwallpaperBinding, Setwallpa
         super.onDestroy()
         // Xóa view overlay khi activity bị destroy
         val windowManager = getSystemService(Context.WINDOW_SERVICE) as WindowManager
-//        windowManager.removeViewImmediate(overlayView)
     }
 
 
@@ -163,7 +186,6 @@ class SetwallpaperActivity : BaseActivity<ActivitySetwallpaperBinding, Setwallpa
         }
         return transformer
     }
-
 
 
     private fun dotDefault() {

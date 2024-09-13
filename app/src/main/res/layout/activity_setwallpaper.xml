@@ -83,17 +83,6 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/viewPagerSetWallpaper" />
 
-        <!--        <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator-->
-        <!--            android:id="@+id/dots_indicatorSetWall"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            app:dotsColor="#667085"-->
-        <!--            app:dotsCornerRadius="8dp"-->
-        <!--            app:dotsSize="12dp"-->
-        <!--            app:layout_constraintLeft_toLeftOf="parent"-->
-        <!--            app:layout_constraintRight_toRightOf="parent"-->
-        <!--            app:layout_constraintTop_toBottomOf="@+id/viewPagerSetWallpaper"-->
-        <!--            app:selectedDotColor="#ffffff" />-->
         <LinearLayout
             android:id="@+id/llDot"
             android:layout_width="wrap_content"
@@ -160,21 +149,19 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvSwipe_to_see_more" />
 
-        <!--        <FrameLayout-->
-        <!--            android:id="@+id/nativeframeSetWall_ads"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="0dp"-->
-        <!--            android:layout_marginTop="10dp"-->
-        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--            app:layout_constraintTop_toBottomOf="@+id/btnSetWallpaper"-->
-        <!--            app:layout_constraintLeft_toLeftOf="parent"-->
-        <!--            app:layout_constraintRight_toRightOf="parent"-->
-        <!--            app:layout_constraintHeight_default="wrap"-->
-        <!--            android:layout_marginHorizontal="16sp">-->
+                <FrameLayout
+                    android:id="@+id/nativeframeSetWall_ads"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnSetWallpaper"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintHeight_default="wrap">
+                    <include layout="@layout/ads_native_shimer" />
 
-        <!--            <include layout="@layout/ads_native_shimer" />-->
-
-        <!--        </FrameLayout>-->
+                </FrameLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

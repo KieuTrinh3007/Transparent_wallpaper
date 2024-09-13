@@ -48,10 +48,6 @@ class LanguageViewModel: BaseViewModel() {
         listLanguage.add(LanguageModel("China", "zh", false, R.drawable.img_china))
 
 
-//        _langDevice.postValue(langDevice)
-//        _codeLang.postValue(codeLang)
-//        languages.postValue(listLanguage)
-
 
         Log.d("bbb",deviceLanguageCode.toString())
         val deviceLanguageIndex = listLanguage.indexOfFirst { it.code == deviceLanguageCode }

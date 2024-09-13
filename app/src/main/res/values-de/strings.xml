@@ -39,6 +39,7 @@
     <string name="feedback">Feedback</string>
     <string name="policy">Richtlinie</string>
     <string name="thank_you">Danke</string>
+    <string name="thank_rate">Vielen Dank, dass Sie sich die Zeit genommen haben, uns zu bewerten</string>
     <!-- TODO: Entfernen oder ändern Sie diesen Platzhaltertext -->
     <string name="hello_blank_fragment">Hallo leerer Fragment</string>
 </resources>

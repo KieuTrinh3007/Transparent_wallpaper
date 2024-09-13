@@ -2,23 +2,23 @@ package com.example.wallpaper.Language
 
 import android.content.Context
 import android.content.Intent
-import android.os.Bundle
 import android.view.View
-import android.view.WindowManager
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.amazic.ads.util.manager.native_ad.NativeBuilder
+import com.amazic.ads.util.manager.native_ad.NativeManager
 import com.example.bmi.Base.BaseActivity
-import com.example.bmi.Utils.SystemUtils
 import com.example.wallpaper.Intro.IntroActivity
 import com.example.wallpaper.Model.LanguageModel
 import com.example.wallpaper.R
-import com.example.wallpaper.databinding.ActivityHomeBinding
 import com.example.wallpaper.databinding.ActivityLanguageStartBinding
 import java.util.Locale
 
 class LanguageStartActivity : BaseActivity<ActivityLanguageStartBinding, LanguageViewModel>() {
 
     private var adapter: LanguageAdapter? = null
+
+    private var nativeManager: NativeManager? = null
     override fun createBinding() = ActivityLanguageStartBinding.inflate(layoutInflater)
 
     override fun setViewModel() = LanguageViewModel()
@@ -27,6 +27,23 @@ class LanguageStartActivity : BaseActivity<ActivityLanguageStartBinding, Languag
 
     override fun initView() {
         super.initView()
+        try {
+
+                val list: MutableList<String> = ArrayList()
+                list.add(getString(R.string.native_language))
+                val builder = NativeBuilder(
+                    this, binding.nativeAds,
+                    R.layout.ads_native_shimer_large, R.layout.ads_native_large_language
+                )
+                builder.setListIdAd(list)
+                nativeManager = NativeManager(this, this, builder)
+
+
+        } catch (e: Exception) {
+            e.printStackTrace()
+            binding.nativeAds.removeAllViews()
+            binding.nativeAds.setVisibility(View.INVISIBLE)
+        }
 
         supportActionBar?.hide()
         restoreLocale()
@@ -36,7 +53,6 @@ class LanguageStartActivity : BaseActivity<ActivityLanguageStartBinding, Languag
             viewModel.setSelectedLanguage(this, language)
 
         }
-
 
         binding.rcvLanguageStart.layoutManager = LinearLayoutManager(this)
         binding.rcvLanguageStart.adapter = adapter

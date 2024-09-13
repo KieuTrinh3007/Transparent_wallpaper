@@ -52,4 +52,27 @@ object SharePrefUtils {
         editor.commit()
     }
 
+    fun getAppLaunchCount(context: Context): Int {
+        val pre = context.getSharedPreferences("data", Context.MODE_PRIVATE)
+        return pre.getInt("launchCount", 0)
+    }
+
+    fun increaseAppLaunchCount(context: Context) {
+        val pre = context.getSharedPreferences("data", Context.MODE_PRIVATE)
+        val editor = pre.edit()
+        editor.putInt("launchCount", getAppLaunchCount(context) + 1)
+        editor.commit()
+    }
+    fun hasShownRateDialog(context: Context): Boolean {
+        val pre = context.getSharedPreferences("data", Context.MODE_PRIVATE)
+        return pre.getBoolean("has_shown_rate_dialog", false)
+    }
+
+    fun setHasShownRateDialog(context: Context, hasShown: Boolean) {
+        val pre = context.getSharedPreferences("data", Context.MODE_PRIVATE)
+        val editor = pre.edit()
+        editor.putBoolean("has_shown_rate_dialog", hasShown)
+        editor.commit()
+    }
+
 }

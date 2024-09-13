@@ -40,4 +40,5 @@
     <string name="policy">Politique</string>
     <string name="thank_you">Merci</string>
     <string name="hello_blank_fragment">Bonjour fragment vide</string>
+    <string name="thank_rate">Merci d\'avoir pris le temps de nous évaluer</string>
 </resources>

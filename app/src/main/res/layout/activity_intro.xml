@@ -5,12 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".Intro.IntroActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutIntro"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/native_ads"
         android:background="#101828">
 
 
@@ -51,13 +53,6 @@
         app:layout_constraintTop_toBottomOf="@id/tvTitle"
          />
 
-<!--    <View-->
-<!--        android:id="@+id/viewIntro"-->
-<!--        android:visibility="visible"-->
-<!--        app:layout_constraintBottom_toTopOf="@id/llDot"-->
-<!--        android:layout_width="match_parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/tvContent"-->
-<!--        android:layout_height="50dp"/>-->
 
     <LinearLayout
         android:layout_marginBottom="16dp"
@@ -109,12 +104,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/llDot" />
 
-    <View
-        android:id="@+id/ads"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="260dp"
-        app:layout_constraintBottom_toBottomOf="parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--            <FrameLayout-->
+<!--                android:id="@+id/native_ads"-->
+<!--                android:background="#101828"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/layoutIntro"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent">-->
+<!--                <include layout="@layout/ads_native_shimer_intro" />-->
+<!--            </FrameLayout>-->
+    <FrameLayout
+        android:id="@+id/native_ads"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="#101828"
+        app:layout_constraintTop_toBottomOf="@+id/layoutIntro"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <include layout="@layout/ads_native_shimer_intro" />
+    </FrameLayout>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
