@@ -34,7 +34,6 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginLeft="16dp"
-
                     android:src="@drawable/ic_menu"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -197,6 +196,7 @@
                                 android:fontFamily="@font/plusjakartasans"
                                 android:text="@string/typing_wallpaper"
                                 android:textAlignment="center"
+                                android:textSize="15sp"
                                 android:textColor="@color/white" />
                         </LinearLayout>
 
@@ -217,7 +217,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="16dp"
-                            android:padding="25dp"
+                            android:paddingVertical="25dp"
                             android:background="@drawable/img_star2">
 
                             <LinearLayout
@@ -225,11 +225,9 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:gravity="center"
+                                android:layout_weight="1"
                                 android:orientation="vertical"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent">
+                                tools:ignore="MissingConstraints">
 
                                 <ImageView
                                     android:layout_width="wrap_content"
@@ -242,6 +240,7 @@
                                     android:fontFamily="@font/plusjakartasans"
                                     android:text="@string/mirror_wallpaper"
                                     android:layout_marginTop="4dp"
+                                    android:textSize="15sp"
                                     android:textAlignment="center"
                                     android:textColor="@color/white" />
                             </LinearLayout>
@@ -250,7 +249,7 @@
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:padding="25dp"
+                            android:paddingVertical="25dp"
                             android:background="@drawable/img_star2">
 
                             <LinearLayout
@@ -260,9 +259,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:orientation="vertical"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent">
+                                tools:ignore="MissingConstraints">
 
                                 <ImageView
                                     android:layout_width="wrap_content"
@@ -276,6 +273,7 @@
                                     android:text="@string/hd_wallpapers"
                                     android:layout_marginTop="4dp"
                                     android:textAlignment="center"
+                                    android:textSize="15sp"
                                     android:textColor="@color/white" />
                             </LinearLayout>
                         </androidx.constraintlayout.widget.ConstraintLayout>

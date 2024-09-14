@@ -155,6 +155,7 @@ class Home : BaseActivity<ActivityHomeBinding, BaseViewModel>() {
                     if (!check) {
                         check = true
                         share()
+
                         AppOpenManager.getInstance().disableAppResumeWithActivity(Home::class.java)
                     }
 
@@ -317,6 +318,7 @@ class Home : BaseActivity<ActivityHomeBinding, BaseViewModel>() {
 
     override fun onResume() {
         super.onResume()
+        AppOpenManager.getInstance().enableAppResumeWithActivity(Home::class.java)
 
         check = false
     }

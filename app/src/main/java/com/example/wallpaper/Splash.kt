@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import androidx.activity.OnBackPressedCallback
 import com.amazic.ads.callback.AdCallback
 import com.amazic.ads.callback.InterCallback
 import com.amazic.ads.util.Admob
@@ -26,7 +27,7 @@ import java.util.Locale
 class Splash : BaseActivity<ActivitySplashBinding, BaseViewModel>() {
     private val handler = Handler(Looper.getMainLooper())
     private lateinit var bannerManager: BannerManager
-
+private lateinit var adsConsentManager : AdsConsentManager;
     override fun createBinding() = ActivitySplashBinding.inflate(layoutInflater)
     override fun setViewModel() = BaseViewModel()
 
@@ -41,7 +42,7 @@ class Splash : BaseActivity<ActivitySplashBinding, BaseViewModel>() {
         val sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         val isFirstLaunch = sharedPreferences.getBoolean("FIRST_LAUNCH_KEY", true)
 
-        val adsConsentManager = AdsConsentManager(this)
+         adsConsentManager = AdsConsentManager(this)
         loadBanner()
         handler.postDelayed({
 
@@ -56,8 +57,19 @@ class Splash : BaseActivity<ActivitySplashBinding, BaseViewModel>() {
                     startMainActivity()
                 }
             }
-        },5000)
+        }, 5000)
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+            }
+        })
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+//        handler.postDelayed({
+//        initShowAdsSplash()
+//        }, 3000)
 
     }
 
